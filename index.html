@@ -1,0 +1,64 @@
+<section id="team" class="page">
+ <div class="panel-head">
+  <h2 class="heading">Команда</h2>
+  <button class="btn" onclick="clearTeamForm();navigate('addTeam')">+ Додати працівника</button>
+ </div>
+
+ <div class="stats">
+  <div class="stat"><small>УСЬОГО В КОМАНДІ</small><h2 id="teamTotal">0</h2></div>
+  <div class="stat"><small>АКТИВНІ</small><h2 id="teamActive">0</h2></div>
+  <div class="stat"><small>У ВІДПУСТЦІ</small><h2 id="teamVacation">0</h2></div>
+  <div class="stat"><small>НЕАКТИВНІ</small><h2 id="teamInactive">0</h2></div>
+ </div>
+
+ <div class="panel">
+  <input class="search" id="teamSearch" placeholder="Пошук працівника..." oninput="renderTeam()">
+  <div class="table-wrap">
+   <table>
+    <thead>
+     <tr><th>ІМ'Я</th><th>РОЛЬ</th><th>ТЕЛЕФОН</th><th>ГРАФІК</th><th>СТАТУС</th><th>ДІЇ</th></tr>
+    </thead>
+    <tbody id="teamList"></tbody>
+   </table>
+  </div>
+ </div>
+</section>
+
+<section id="addTeam" class="page">
+ <h2 class="heading" id="teamFormTitle">Новий учасник команди</h2>
+ <div class="panel form">
+  <label>Ім'я та прізвище</label>
+  <input id="tName" placeholder="Наприклад: Олександр">
+
+  <label>Роль у команді</label>
+  <select id="tRole">
+   <option>Актор</option>
+   <option>Адміністратор</option>
+   <option>Організатор</option>
+   <option>Ведучий</option>
+   <option>Технічний працівник</option>
+   <option>Інше</option>
+  </select>
+
+  <label>Телефон</label>
+  <input id="tPhone" placeholder="+380...">
+
+  <label>Графік / зміни</label>
+  <input id="tSchedule" placeholder="Наприклад: Пн-Пт, 15:00–21:00">
+
+  <label>Статус</label>
+  <select id="tStatus">
+   <option>Активний</option>
+   <option>Неактивний</option>
+   <option>У відпустці</option>
+  </select>
+
+  <label>Примітки</label>
+  <textarea id="tNotes" placeholder="Додаткова інформація про працівника"></textarea>
+
+  <div class="actions">
+   <button class="btn" onclick="saveTeamMember()">Зберегти</button>
+   <button class="btn gray" onclick="navigate('team')">Скасувати</button>
+  </div>
+ </div>
+</section>
